@@ -10,13 +10,20 @@ public class userplay : MonoBehaviour
     public Button buttonuser;
     void Start()
     {
-        buttonuser.onClick.AddListener(() =>SceneManager.LoadScene("1ere scene jeu"));
+        buttonuser.onClick.AddListener(() => ButtonClicked());
 
     }
 
     // Update is called once per frame
-    void Update()
-    {
-        
-    }
+   void ButtonClicked()
+       {
+           StartCoroutine(init());
+           SceneManager.LoadScene("1ere scene jeu");
+       }
+   IEnumerator init()
+   {
+       WWWForm form = new WWWForm();
+       WWW www = new WWW("https://primsie-spears.000webhostapp.com/init.php",form);
+       yield return www;
+   }
 }

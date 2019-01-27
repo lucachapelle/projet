@@ -22,7 +22,6 @@ public class sc : MonoBehaviour
     public static Vector2 _position5 = new Vector2(960+130,540+410);
     public static Vector2 _position6= new Vector2(960+560,540+100);
     public Text text;
-    public static int _nbjoueur = 0;
     // Start is called before the first frame update
     void Start()
     {
@@ -33,8 +32,7 @@ public class sc : MonoBehaviour
         buttonJ5.transform.position = new Vector2(960+450,540+350);
         buttonJ6.transform.position = new Vector2(960+750,540+0);
         buttonplay.SetActive(false);
-
-        text.text = "il y a " + _nbjoueur + " joueurs sélectionnés ";
+        text.text = "il y a " + Main.Global.Getnbjoueur() + " joueurs sélectionnés ";
         text.fontSize = 25;
         
         
@@ -43,9 +41,10 @@ public class sc : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        _nbjoueur = b1.estselec + b2.estselec + b3.estselec + b4.estselec + b5.estselec + b6.estselec;
-        text.text = "il y a " + _nbjoueur + " joueurs sélectionnés ";
-        if (_nbjoueur >= 4)
+        Main.Global.Setnbjoueur(b1.estselec + b2.estselec + b3.estselec + b4.estselec + b5.estselec + b6.estselec);
+        
+        text.text = "il y a " + Main.Global.Getnbjoueur() + " joueurs sélectionnés ";
+        if (Main.Global.Getnbjoueur() >= 4)
         {
             buttonplay.SetActive(true);
 
@@ -57,13 +56,5 @@ public class sc : MonoBehaviour
         }
 
     }
-
-   public static int getnbjoueur()
-    {
-        return _nbjoueur;
-    }
-
-
- 
    
 }

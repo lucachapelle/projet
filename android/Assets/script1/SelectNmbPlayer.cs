@@ -62,7 +62,7 @@ public class SelectNmbPlayer : MonoBehaviour
 
         public int IsOk => isOk;
 
-        public int getid
+        public int settid
         {
             get => id;
             set => id = value;

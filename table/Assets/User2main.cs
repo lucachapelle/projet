@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Runtime.InteropServices.ComTypes;
 using UnityEngine;
 using UnityEngine.UI;
@@ -38,43 +39,43 @@ public class User2main : MonoBehaviour
     public static Sprite pice8;
     public static Sprite pice9;
 
-    public Image image1;
-    public Image image2;
-    public Image image3;
-    public Image image4;
-    public Image image5;
-    public Image image6;
+    public Image imagep11;
+    public Image imagep12;
+    public Image imagep13;
+    public Image imagep14;
+    public Image imagep15;
 
-    public Image image11;
-    public Image image12;
-    public Image image13;
-    public Image image14;
-    public Image image15;
-    public Image image16;
+    public Image imagep21;
+    public Image imagep22;
+    public Image imagep23;
+    public Image imagep24;
+    public Image imagep25;
 
-    public Image image111;
-    public Image image112;
-    public Image image113;
+    public Image imagep31;
+    public Image imagep32;
+    public Image imagep33;
+    public Image imagep34;
+    public Image imagep35;
     
-    public Image image121;
-    public Image image122;
-    public Image image123;
+    public Image imagep41;
+    public Image imagep42;
+    public Image imagep43;
+    public Image imagep44;
+    public Image imagep45;
     
-    public Image image131;
-    public Image image132;
-    public Image image133;
+    public Image imagep51;
+    public Image imagep52;
+    public Image imagep53;
+    public Image imagep54;
+    public Image imagep55;
     
-    public Image image141;
-    public Image image142;
-    public Image image143;
-    
-    public Image image151;
-    public Image image152;
-    public Image image153;
-    
-    public Image image161;
-    public Image image162;
-    public Image image163;
+    public Image imagep61;
+    public Image imagep62;
+    public Image imagep63;
+    public Image imagep64;
+    public Image imagep65;
+
+    public int[] tabPlace;
     
 
     public Image[] imagetab;
@@ -87,157 +88,80 @@ public class User2main : MonoBehaviour
     public static Sprite[] pice;
 
     void Start()
-    {
-        vector2 = new Vector2[sc._nbjoueur];
-        imagetab = new Image[] {image1, image2, image3, image4, image5, image6};
-        imagetab1 = new Image[] {image11, image12, image13, image14, image15, image16};
-
-        int i = 0;
-
-        if (b1.estselec == 1)
-        {
-            vector2[i] = sc._position1;
-            i++;
-        }
-        else
-        {
-            Destroy(image111);
-            Destroy(image112);
-            Destroy(image113);
-
+    {    
+        tabPlace = new int[7]{0,1,1,1,1,1,1};
+        if (b1.estselec != 1)
+        {       
+            Destroy(imagep11);
+            Destroy(imagep12);
+            Destroy(imagep13);
+            Destroy(imagep14);
+            Destroy(imagep15);
+            tabPlace[1] = 0;
         }
 
-        if (b2.estselec == 1)
+        if (b2.estselec != 1)
         {
-            vector2[i] = sc._position2;
-            i++;
-        }
-        else
-        {
-            Destroy(image121);
-            Destroy(image122);
-            Destroy(image123);
+            Destroy(imagep21);
+            Destroy(imagep22);
+            Destroy(imagep23);
+            Destroy(imagep24);
+            Destroy(imagep25);
+            tabPlace[2] = 0;
         } 
            
 
-        if (b3.estselec == 1)
+        if (b3.estselec != 1)
         {
-            vector2[i] = sc._position3;
-            i++;
-        }else
-        {
-            Destroy(image131);
-            Destroy(image132);
-            Destroy(image133);
+            Destroy(imagep31);
+            Destroy(imagep32);
+            Destroy(imagep33);
+            Destroy(imagep34);
+            Destroy(imagep35);
+            tabPlace[3] = 0;
         } 
 
-        if (b4.estselec == 1)
+        if (b4.estselec != 1)
         {
-            vector2[i] = sc._position4;
-            i++;
-        }else
-        {
-            Destroy(image141);
-            Destroy(image142);
-            Destroy(image143);
+            Destroy(imagep41);
+            Destroy(imagep42);
+            Destroy(imagep43);
+            Destroy(imagep44);
+            Destroy(imagep45);
+            tabPlace[4] = 0;
         } 
-        if (b5.estselec == 1)
+        
+        if (b5.estselec != 1)
         {
-            vector2[i] = sc._position5;
-            i++;
-        }else
-        {
-            Destroy(image151);
-            Destroy(image152);
-            Destroy(image153);
-        } 
-
-        if (b6.estselec == 1)
-        {
-            vector2[i] = sc._position6;
-            i++;
-        }else
-        {
-            Destroy(image161);
-            Destroy(image162);
-            Destroy(image163);
+            Destroy(imagep51);
+            Destroy(imagep52);
+            Destroy(imagep53);
+            Destroy(imagep54);
+            Destroy(imagep55);
+            tabPlace[5] = 0;
         } 
 
-
-        image1.transform.position = vector2[0];
-        image2.transform.position = vector2[1];
-        image3.transform.position = vector2[2];
-        image4.transform.position = vector2[3];
-
-        image11.transform.position = vector2[0];
-        image12.transform.position = vector2[1];
-        image13.transform.position = vector2[2];
-        image14.transform.position = vector2[3];
-        if (sc._nbjoueur == 4)
-        {
-            Destroy(image5);
-            Destroy(image6);
-
-            Destroy(image15);
-            Destroy(image16);
+        if (b6.estselec != 1)
+        {            
+            Destroy(imagep61);
+            Destroy(imagep62);
+            Destroy(imagep63);
+            Destroy(imagep64);
+            Destroy(imagep65);
+            tabPlace[6] = 0;
         }
 
-        else if (sc._nbjoueur == 5)
+        int j = 1;
+        for (int i = 1; i < 7; i++)
         {
-            image5.transform.position = vector2[4];
-            Destroy(image6);
-
-            image15.transform.position = vector2[4];
-            Destroy(image16);
-        }
-        else if (sc._nbjoueur == 6)
-        {
-            image5.transform.position = vector2[4];
-            image6.transform.position = vector2[5];
-
-            image15.transform.position = vector2[4];
-            image16.transform.position = vector2[5];
-        }
-
-
-       for (i = 0; i < 6; i++)
-        {
+            if (tabPlace[i] == 1)
             {
-                if ((imagetab[i].transform.position.Equals(sc._position4)  ) || (imagetab[i].transform.position.Equals(sc._position5)  ))
-                {
-                    imagetab[i].transform.Rotate(Vector3.forward * -180);
-                    imagetab1[i].transform.Translate(185,0,0);
-                    imagetab1[i].transform.Rotate(Vector3.forward * -180);
-
-
-                }
-
-
-                else if (imagetab[i].transform.position.Equals(sc._position3))
-                {
-                    imagetab[i].transform.Rotate(Vector3.forward * -90);
-                    imagetab1[i].transform.Translate(0,-200,0);
-
-                    imagetab1[i].transform.Rotate(Vector3.forward * -90);
-
-
-                }
-                else if (imagetab[i].transform.position.Equals(sc._position6))
-                {
-                    imagetab[i].transform.Rotate(Vector3.forward * 90);
-                    imagetab1[i].transform.Translate(0,-200,0);
-                    imagetab1[i].transform.Rotate(Vector3.forward * 90);
-
-
-
-                }
-                else
-                {
-                    imagetab1[i].transform.Translate(185,0,0);
-
-                }
+                Main.Global.GetPlayer()[j].setplace = i;
+                j++;
             }
         }
+        Debug.Log(Main.Global.ToString());
+        StartCoroutine(changePlace());
     }
 
     public static Sprite[] getSpritel()
@@ -301,5 +225,26 @@ public class User2main : MonoBehaviour
         pice9 = Resources.Load<Sprite>("image/Equipements/ConnexionVPN");
         pice0 = Resources.Load<Sprite>("image/Equipements/Couchettes");
         pice = new Sprite[9] {pice1, pice2, pice3, pice4, pice5, pice6, pice7, pice8, pice9};
+    }
+    IEnumerator changePlace()
+    {
+        WWWForm form = new WWWForm();
+        form.AddField("user1",Main.Global.GetPlayer()[1].Place);
+        form.AddField("user2",Main.Global.GetPlayer()[2].Place);
+        form.AddField("user3",Main.Global.GetPlayer()[3].Place);
+        form.AddField("user4",Main.Global.GetPlayer()[4].Place);
+        form.AddField("user5",Main.Global.GetPlayer()[5].Place);
+        form.AddField("user6",Main.Global.GetPlayer()[6].Place);
+
+        WWW www = new WWW("https://primsie-spears.000webhostapp.com/changePlaceCarte.php",form);
+        yield return www;
+        if (www.text == "0")
+        {
+            Debug.Log("ok");
+        }
+        else
+        {
+            Debug.Log("erroer"+www.text);
+        }
     }
 }

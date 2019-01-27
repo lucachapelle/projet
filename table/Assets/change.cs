@@ -24,7 +24,7 @@ public class change : MonoBehaviour
     }
     void ButtonClicked()
     {
-        if (sc.getnbjoueur() > 4)
+        if (Main.Global.Getnbjoueur() > 4)
         {
             LoadLevel();
         }
