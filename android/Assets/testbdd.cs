@@ -7,26 +7,25 @@ public class testbdd : MonoBehaviour
 {
     // Start is called before the first frame update
     public Button button;
-    private int i = 1;
+    public int i;
     void Start()
     {
         //Calls the TaskOnClick/TaskWithParameters/ButtonClicked method when you click the Button
-        button.onClick.AddListener(() => ButtonClicked(i));
-        
+        button.onClick.AddListener(() => ButtonClicked());
     }    
     
-    void ButtonClicked(int buttonNo)
+    void ButtonClicked()
     {
         //Output this to console when the Button3 is clicked
-        StartCoroutine(test());
+        StartCoroutine(selectPlayer());
        
     }
 
-    IEnumerator test()
+    IEnumerator selectPlayer()
     {
         WWWForm form = new WWWForm();
-        form.AddField("id",2);
-        WWW www = new WWW("https://primsie-spears.000webhostapp.com/test.php",form);
+        form.AddField("id",1);
+        WWW www = new WWW("https://primsie-spears.000webhostapp.com/estSelect.php",form);
         yield return www;
         if (www.text == "0")
         {
@@ -36,7 +35,6 @@ public class testbdd : MonoBehaviour
         else
         {
             Debug.Log("error"+www.text);
-
         }
     }
  }
