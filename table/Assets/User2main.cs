@@ -75,6 +75,13 @@ public class User2main : MonoBehaviour
     public Image imagep64;
     public Image imagep65;
 
+    public Text textp1;
+    public Text textp2;
+    public Text textp3;
+    public Text textp4;
+    public Text textp5;
+    public Text textp6;
+    
     public int[] tabPlace;
     
 
@@ -89,6 +96,8 @@ public class User2main : MonoBehaviour
 
     void Start()
     {    
+        imagetab = new Image[31];
+        int x = 1;
         tabPlace = new int[7]{0,1,1,1,1,1,1};
         if (b1.estselec != 1)
         {       
@@ -98,7 +107,19 @@ public class User2main : MonoBehaviour
             Destroy(imagep14);
             Destroy(imagep15);
             tabPlace[1] = 0;
+            Destroy(textp1);
         }
+        else
+        {
+                imagetab[x++] = imagep11;
+                imagetab[x++] = imagep12;
+                imagetab[x++] = imagep13;
+                imagetab[x++] = imagep14;
+                imagetab[x++] = imagep15;
+        }
+
+
+
 
         if (b2.estselec != 1)
         {
@@ -108,6 +129,14 @@ public class User2main : MonoBehaviour
             Destroy(imagep24);
             Destroy(imagep25);
             tabPlace[2] = 0;
+            Destroy(textp2);
+        }else
+        {
+            imagetab[x++] = imagep21;
+            imagetab[x++] = imagep22;
+            imagetab[x++] = imagep23;
+            imagetab[x++] = imagep24;
+            imagetab[x++] = imagep25;
         } 
            
 
@@ -119,6 +148,14 @@ public class User2main : MonoBehaviour
             Destroy(imagep34);
             Destroy(imagep35);
             tabPlace[3] = 0;
+            Destroy(textp3);
+        }else
+        {
+            imagetab[x++] = imagep31;
+            imagetab[x++] = imagep32;
+            imagetab[x++] = imagep33;
+            imagetab[x++] = imagep34;
+            imagetab[x++] = imagep35;
         } 
 
         if (b4.estselec != 1)
@@ -129,6 +166,14 @@ public class User2main : MonoBehaviour
             Destroy(imagep44);
             Destroy(imagep45);
             tabPlace[4] = 0;
+            Destroy(textp4);
+        }else
+        {
+            imagetab[x++] = imagep41;
+            imagetab[x++] = imagep42;
+            imagetab[x++] = imagep43;
+            imagetab[x++] = imagep44;
+            imagetab[x++] = imagep45;
         } 
         
         if (b5.estselec != 1)
@@ -139,7 +184,15 @@ public class User2main : MonoBehaviour
             Destroy(imagep54);
             Destroy(imagep55);
             tabPlace[5] = 0;
-        } 
+            Destroy(textp5);
+        } else
+        {
+            imagetab[x++] = imagep51;
+            imagetab[x++] = imagep52;
+            imagetab[x++] = imagep53;
+            imagetab[x++] = imagep54;
+            imagetab[x++] = imagep55;
+        }
 
         if (b6.estselec != 1)
         {            
@@ -149,6 +202,15 @@ public class User2main : MonoBehaviour
             Destroy(imagep64);
             Destroy(imagep65);
             tabPlace[6] = 0;
+            Destroy(textp6);
+        }else
+        
+        {
+            imagetab[x++] = imagep61;
+            imagetab[x++] = imagep62;
+            imagetab[x++] = imagep63;
+            imagetab[x++] = imagep64;
+            imagetab[x++] = imagep65;
         }
 
         int j = 1;
@@ -160,8 +222,21 @@ public class User2main : MonoBehaviour
                 j++;
             }
         }
-        Debug.Log(Main.Global.ToString());
-        StartCoroutine(changePlace());
+
+        for (int i = 1; i < x; i++)
+        {
+            imagetab[i].enabled = false;
+        }
+        //Debug.Log(Main.Global.ToString());
+        //StartCoroutine(changePlace());
+        InvokeRepeating("requette", 0f, 1f);
+
+        
+        
+    }
+    void FixedUpdate()
+    {
+
     }
 
     public static Sprite[] getSpritel()
@@ -245,6 +320,38 @@ public class User2main : MonoBehaviour
         else
         {
             Debug.Log("erroer"+www.text);
+        }
+    }
+    
+    IEnumerator checkestok()
+    {
+        WWWForm logform = new WWWForm();
+        var www = new WWW("https://primsie-spears.000webhostapp.com/checkestok.php", logform);
+        yield return www;
+
+        string[] data = www.text.Split(new string[] {","}, System.StringSplitOptions.None);
+        Main.Global.tabPlayer[1].setisOk = int.Parse(data[0]);
+        Main.Global.tabPlayer[2].setisOk = int.Parse(data[1]);
+        Main.Global.tabPlayer[3].setisOk = int.Parse(data[2]);
+        Main.Global.tabPlayer[4].setisOk = int.Parse(data[3]);
+        Main.Global.tabPlayer[5].setisOk = int.Parse(data[4]);
+        Main.Global.tabPlayer[6].setisOk = int.Parse(data[5]);
+
+
+    }
+    
+    private void requette()
+    {
+        StartCoroutine(checkestok());
+        int x = 6;
+        
+        if (Main.Global.GetPlayer()[1].GetIsOk() == 1)
+        {
+            textp1.enabled = false;
+        }
+        for (int i = 1; i < x; i++)
+        {
+            imagetab[i].enabled = Main.Global.GetPlayer()[1].GetIsOk() != 0; 
         }
     }
 }

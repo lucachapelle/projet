@@ -43,9 +43,12 @@ public class Main : MonoBehaviour
         public int Idcarte1 => idcarte1;
         public int Idcarte2 => idcarte2;
         public int Idcarte3 => idcarte3;
-        public int IsOk => isOk;
-        
-        
+        public int GetIsOk()
+        {
+            return isOk;
+        }
+
+
         public int setid
         {
             get => id;
