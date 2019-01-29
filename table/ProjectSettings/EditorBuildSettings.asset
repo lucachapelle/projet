@@ -26,4 +26,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/utilisateur/2eme scene jeu.unity
     guid: 9f60288aad0c8b845a4825ee8ce645be
+  - enabled: 1
+    path: Assets/Scenes/utilisateur/3 eme scene.unity
+    guid: 5590f843d6aa2784e9993bd5e434be8b
   m_configObjects: {}

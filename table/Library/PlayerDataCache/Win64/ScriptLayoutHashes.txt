@@ -181,3 +181,4 @@ ca910f344cf61e78b3f04492ad1faa3e Assembly-CSharp.dll:.user2image2
 8a10d1fc6029b3f51d0abc87582fa9fd Assembly-CSharp.dll:.quit
 8649814970b42d345b89944b862453cc Unity.TextMeshPro.dll:TMPro.TMP_SubMesh
 e23a6ebb3ca53c1ba5c88e19b39bd9fa Assembly-CSharp.dll:.change
+7ab0ef18ca80a48f997839c15b232a2f Assembly-CSharp.dll:.ChangeScene
