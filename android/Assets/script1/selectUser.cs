@@ -15,37 +15,16 @@ public class selectUser : MonoBehaviour
     void Start()
     {
         //Calls the TaskOnClick/TaskWithParameters/ButtonClicked method when you click the Button
-        button.onClick.AddListener(() => ButtonClicked(i));
+        InvokeRepeating("requette", 3f, 1f);
+
     }    
     
     void ButtonClicked(int i)
     {
-        g = new MainScriptsc1.Global();
         //Output this to console when the Button3 is clicked
-        switch (i)
-        {
-            case 1:
-                g.SetPlayer(SelectNmbPlayer.p1);
-                break;
-            case 2:
-                g.SetPlayer(SelectNmbPlayer.p2);                
-                break;
-            case 3:
-                g.SetPlayer(SelectNmbPlayer.p3);                
-                break;
-            case 4:
-                g.SetPlayer(SelectNmbPlayer.p4);                
-                break;
-            case 5:
-                g.SetPlayer(SelectNmbPlayer.p5);                
-                break;
-            case 6:
-                g.SetPlayer(SelectNmbPlayer.p6);                
-                break;
-            default:
-                print ("Prob");
-                break;
-        }
+        MainScriptsc1.Global.SetPlayer(SelectNmbPlayer.getPlayer(i));
+        
+        Debug.Log(MainScriptsc1.Global.GetPlayer().ToString());
         StartCoroutine(selectPlayer(i));
         SceneManager.LoadScene(scene.handle);
     }
@@ -56,6 +35,11 @@ public class selectUser : MonoBehaviour
         form.AddField("id",i);
         WWW www = new WWW("https://primsie-spears.000webhostapp.com/estSelect.php",form);
         yield return www;
+    }
+    
+    private void requette()
+    {
+        button.onClick.AddListener(() => ButtonClicked(i));
     }
 }
 

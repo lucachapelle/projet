@@ -1527,10 +1527,10 @@ RectTransform:
   - {fileID: 497693876}
   - {fileID: 1065981340}
   - {fileID: 1280504774}
-  - {fileID: 1834307459}
+  - {fileID: 1694018288}
   - {fileID: 1213173784}
   - {fileID: 1049254595}
-  - {fileID: 1694018288}
+  - {fileID: 1834307459}
   m_Father: {fileID: 146892771}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1643,10 +1643,10 @@ MonoBehaviour:
   imagep65: {fileID: 1393855177}
   textp1: {fileID: 1065981341}
   textp2: {fileID: 1280504775}
-  textp3: {fileID: 1834307460}
+  textp3: {fileID: 1694018289}
   textp4: {fileID: 1213173785}
   textp5: {fileID: 1049254596}
-  textp6: {fileID: 1694018289}
+  textp6: {fileID: 1834307460}
   tabPlace: 
   imagetab: []
   imagetab1: []
@@ -2709,7 +2709,7 @@ GameObject:
   - component: {fileID: 1694018290}
   - component: {fileID: 1694018289}
   m_Layer: 5
-  m_Name: Textp6
+  m_Name: Textp3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2727,7 +2727,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1210895825}
-  m_RootOrder: 36
+  m_RootOrder: 33
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: -90}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -2862,7 +2862,7 @@ GameObject:
   - component: {fileID: 1834307461}
   - component: {fileID: 1834307460}
   m_Layer: 5
-  m_Name: Textp3
+  m_Name: Textp6
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2880,7 +2880,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1210895825}
-  m_RootOrder: 33
+  m_RootOrder: 36
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}

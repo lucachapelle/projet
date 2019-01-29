@@ -13,7 +13,7 @@ public class MainScriptsc1 : MonoBehaviour
         {
             player = new SelectNmbPlayer.Player();
         }
-        public  void SetPlayer(SelectNmbPlayer.Player p)
+        public static void SetPlayer(SelectNmbPlayer.Player p)
         {
             player = p;
         }

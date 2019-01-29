@@ -13,6 +13,7 @@
         <e p="b5.cs" t="Include" />
         <e p="b6.cs" t="Include" />
         <e p="change.cs" t="Include" />
+        <e p="init.cs" t="Include" />
         <e p="Main.cs" t="Include" />
         <e p="menuchange.cs" t="Include" />
         <e p="quit.cs" t="Include" />

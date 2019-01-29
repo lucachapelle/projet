@@ -64,6 +64,7 @@
     <Compile Include="Assets\b5.cs" />
     <Compile Include="Assets\b6.cs" />
     <Compile Include="Assets\change.cs" />
+    <Compile Include="Assets\init.cs" />
     <Compile Include="Assets\Main.cs" />
     <Compile Include="Assets\menuchange.cs" />
     <Compile Include="Assets\quit.cs" />

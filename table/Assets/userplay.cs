@@ -17,13 +17,8 @@ public class userplay : MonoBehaviour
     // Update is called once per frame
    void ButtonClicked()
        {
-           StartCoroutine(init());
+
            SceneManager.LoadScene("1ere scene jeu");
        }
-   IEnumerator init()
-   {
-       WWWForm form = new WWWForm();
-       WWW www = new WWW("https://primsie-spears.000webhostapp.com/init.php",form);
-       yield return www;
-   }
+
 }

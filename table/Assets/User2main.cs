@@ -87,7 +87,7 @@ public class User2main : MonoBehaviour
 
     public Image[] imagetab;
     public Image[] imagetab1;
-
+    private Text[] texTab;
     public Vector2[] vector2;
 
     public static Sprite[] picl;
@@ -97,6 +97,7 @@ public class User2main : MonoBehaviour
     void Start()
     {    
         imagetab = new Image[31];
+        texTab = new Text[7]{null,textp1,textp2,textp3,textp4,textp5,textp6};
         int x = 1;
         tabPlace = new int[7]{0,1,1,1,1,1,1};
         if (b1.estselec != 1)
@@ -228,7 +229,11 @@ public class User2main : MonoBehaviour
             imagetab[i].enabled = false;
         }
         //Debug.Log(Main.Global.ToString());
-        //StartCoroutine(changePlace());
+        StartCoroutine(changePlace());
+        init();
+        init2();
+        init3();
+        
         InvokeRepeating("requette", 0f, 1f);
 
         
@@ -269,7 +274,7 @@ public class User2main : MonoBehaviour
         picl8 = Resources.Load<Sprite>("image/Locomotion/Rebondir");
         picl9 = Resources.Load<Sprite>("image/Locomotion/Roues");
         picl0 = Resources.Load<Sprite>("image/Locomotion/LocomotionDos");
-        picl = new Sprite[9] {picl1, picl2, picl3, picl4, picl5, picl6, picl7, picl8, picl9};
+        picl = new Sprite[10] {picl0,picl1, picl2, picl3, picl4, picl5, picl6, picl7, picl8, picl9};
     }
 
     public static void init2()
@@ -284,7 +289,7 @@ public class User2main : MonoBehaviour
         picd8 = Resources.Load<Sprite>("image/Dimension/VehiculeLeger");
         picd9 = Resources.Load<Sprite>("image/Dimension/VehiculeLourd");
         picd0 = Resources.Load<Sprite>("image/Dimension/DosDimension");
-        picd = new Sprite[9] {picd1, picd2, picd3, picd4, picd5, picd6, picd7, picd8, picd9};
+        picd = new Sprite[10] {picd0,picd1, picd2, picd3, picd4, picd5, picd6, picd7, picd8, picd9};
     }
     
     public static void init3()
@@ -299,7 +304,7 @@ public class User2main : MonoBehaviour
         pice8 = Resources.Load<Sprite>("image/Equipements/CommandeVocale");
         pice9 = Resources.Load<Sprite>("image/Equipements/ConnexionVPN");
         pice0 = Resources.Load<Sprite>("image/Equipements/Couchettes");
-        pice = new Sprite[9] {pice1, pice2, pice3, pice4, pice5, pice6, pice7, pice8, pice9};
+        pice = new Sprite[10] {pice0,pice1, pice2, pice3, pice4, pice5, pice6, pice7, pice8, pice9};
     }
     IEnumerator changePlace()
     {
@@ -326,32 +331,110 @@ public class User2main : MonoBehaviour
     IEnumerator checkestok()
     {
         WWWForm logform = new WWWForm();
-        var www = new WWW("https://primsie-spears.000webhostapp.com/checkestok.php", logform);
+        var www = new WWW("https://primsie-spears.000webhostapp.com/select.php", logform);
         yield return www;
 
         string[] data = www.text.Split(new string[] {","}, System.StringSplitOptions.None);
-        Main.Global.tabPlayer[1].setisOk = int.Parse(data[0]);
-        Main.Global.tabPlayer[2].setisOk = int.Parse(data[1]);
-        Main.Global.tabPlayer[3].setisOk = int.Parse(data[2]);
-        Main.Global.tabPlayer[4].setisOk = int.Parse(data[3]);
-        Main.Global.tabPlayer[5].setisOk = int.Parse(data[4]);
-        Main.Global.tabPlayer[6].setisOk = int.Parse(data[5]);
-
-
+        int x = 0;
+        
+        for (int i = 1; i < 7; i++)
+        {
+            Main.Global.tabPlayer[i] = new Main.Player(int.Parse(data[x++]), int.Parse(data[x++]), int.Parse(data[x++]), int.Parse(data[x++]),
+                int.Parse(data[x++]), int.Parse(data[x++]), int.Parse(data[x++]));
+        }
     }
+
     
     private void requette()
     {
-        StartCoroutine(checkestok());
-        int x = 6;
         
+        StartCoroutine(checkestok());
         if (Main.Global.GetPlayer()[1].GetIsOk() == 1)
         {
-            textp1.enabled = false;
+            texTab[Main.Global.GetPlayer()[1].Place].enabled = false;
+            imagetab[1].sprite = picl[ Main.Global.GetPlayer()[1].Idcarte1];
+            imagetab[2].sprite = picd[ Main.Global.GetPlayer()[1].Idcarte2];
+            imagetab[3].sprite = pice[ Main.Global.GetPlayer()[1].Idcarte3];
         }
+        if (Main.Global.GetPlayer()[2].GetIsOk() == 1)
+        {
+            texTab[Main.Global.GetPlayer()[2].Place].enabled = false;
+            imagetab[6].sprite = pice[ Main.Global.GetPlayer()[2].Idcarte1];
+            imagetab[7].sprite = pice[ Main.Global.GetPlayer()[2].Idcarte2];
+            imagetab[8].sprite = pice[ Main.Global.GetPlayer()[2].Idcarte3];
+        }
+        if (Main.Global.GetPlayer()[3].GetIsOk() == 1)
+        {
+            texTab[Main.Global.GetPlayer()[3].Place].enabled = false;
+            imagetab[1].sprite = picl[ Main.Global.GetPlayer()[3].Idcarte1];
+            imagetab[2].sprite = picd[ Main.Global.GetPlayer()[3].Idcarte2];
+            imagetab[3].sprite = pice[ Main.Global.GetPlayer()[3].Idcarte3];
+        }
+        if (Main.Global.GetPlayer()[4].GetIsOk() == 1)
+        {
+            texTab[Main.Global.GetPlayer()[4].Place].enabled = false;
+            imagetab[1].sprite = picl[ Main.Global.GetPlayer()[4].Idcarte1];
+            imagetab[2].sprite = picd[ Main.Global.GetPlayer()[4].Idcarte2];
+            imagetab[3].sprite = pice[ Main.Global.GetPlayer()[4].Idcarte3];
+        }
+        if (Main.Global.GetPlayer()[5].GetIsOk() == 1)
+        {
+            texTab[Main.Global.GetPlayer()[5].Place].enabled = false;
+            imagetab[1].sprite = picl[ Main.Global.GetPlayer()[5].Idcarte1];
+            imagetab[2].sprite = picd[ Main.Global.GetPlayer()[5].Idcarte2];
+            imagetab[3].sprite = pice[ Main.Global.GetPlayer()[5].Idcarte3];
+        }
+        if (Main.Global.GetPlayer()[6].GetIsOk() == 1)
+        {
+            texTab[Main.Global.GetPlayer()[6].Place].enabled = false;
+            imagetab[1].sprite = picl[ Main.Global.GetPlayer()[6].Idcarte1];
+            imagetab[2].sprite = picd[ Main.Global.GetPlayer()[6].Idcarte2];
+            imagetab[3].sprite = pice[ Main.Global.GetPlayer()[6].Idcarte3];
+            
+        }
+
+      
+        int x = 6;                                                                                                    
         for (int i = 1; i < x; i++)
         {
-            imagetab[i].enabled = Main.Global.GetPlayer()[1].GetIsOk() != 0; 
+            imagetab[i].enabled = Main.Global.GetPlayer()[1].GetIsOk() != 0;
         }
+        
+       x = 11 ;
+
+        for (int i = 6; i < x; i++)
+        {
+            imagetab[i].enabled = Main.Global.GetPlayer()[2].GetIsOk() != 0; 
+            
+        }
+        x = 16;
+
+        for (int i = 11; i < x; i++)
+        {
+            imagetab[i].enabled = Main.Global.GetPlayer()[3].GetIsOk() != 0; 
+        }
+        x = 21;
+
+        for (int i = 16; i < x; i++)
+        {
+            imagetab[i].enabled = Main.Global.GetPlayer()[4].GetIsOk() != 0; 
+        }
+        x = 26;
+        if (Main.Global.Getnbjoueur() > 4)
+        {
+            for (int i = 21; i < x; i++)
+            {
+                imagetab[i].enabled = Main.Global.GetPlayer()[5].GetIsOk() != 0; 
+            }
+            x =31;
+            if (Main.Global.Getnbjoueur() > 5)
+            {
+                for (int i = 26; i < x; i++)
+                {
+                    imagetab[i].enabled = Main.Global.GetPlayer()[6].GetIsOk() != 0;
+                }
+            }
+        }
+        
     }
 }
