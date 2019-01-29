@@ -124,12 +124,12 @@ public class SelectNmbPlayer : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        button1.interactable = p1.setisSelect != 1;
-        button2.interactable = p2.setisSelect != 1;
-        button3.interactable = p3.setisSelect != 1;
-        button4.interactable = p4.setisSelect != 1;
-        button5.interactable = p5.setisSelect != 1;
-        button6.interactable = p6.setisSelect != 1;
+        button1.interactable = tabPlayer[1].IsSelect != 1;
+        button2.interactable = tabPlayer[2].IsSelect != 1;
+        button3.interactable = tabPlayer[3].IsSelect != 1;
+        button4.interactable = tabPlayer[4].IsSelect != 1;
+        button5.interactable = tabPlayer[5].IsSelect != 1;
+        button6.interactable = tabPlayer[6].IsSelect != 1;
     }
 
     private static IEnumerator userInfo()

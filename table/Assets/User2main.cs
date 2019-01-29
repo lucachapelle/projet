@@ -359,37 +359,37 @@ public class User2main : MonoBehaviour
         if (Main.Global.GetPlayer()[2].GetIsOk() == 1)
         {
             texTab[Main.Global.GetPlayer()[2].Place].enabled = false;
-            imagetab[6].sprite = pice[ Main.Global.GetPlayer()[2].Idcarte1];
-            imagetab[7].sprite = pice[ Main.Global.GetPlayer()[2].Idcarte2];
+            imagetab[6].sprite = picl[ Main.Global.GetPlayer()[2].Idcarte1];
+            imagetab[7].sprite = picd[ Main.Global.GetPlayer()[2].Idcarte2];
             imagetab[8].sprite = pice[ Main.Global.GetPlayer()[2].Idcarte3];
         }
         if (Main.Global.GetPlayer()[3].GetIsOk() == 1)
         {
             texTab[Main.Global.GetPlayer()[3].Place].enabled = false;
-            imagetab[1].sprite = picl[ Main.Global.GetPlayer()[3].Idcarte1];
-            imagetab[2].sprite = picd[ Main.Global.GetPlayer()[3].Idcarte2];
-            imagetab[3].sprite = pice[ Main.Global.GetPlayer()[3].Idcarte3];
+            imagetab[11].sprite = picl[ Main.Global.GetPlayer()[3].Idcarte1];
+            imagetab[12].sprite = picd[ Main.Global.GetPlayer()[3].Idcarte2];
+            imagetab[13].sprite = pice[ Main.Global.GetPlayer()[3].Idcarte3];
         }
         if (Main.Global.GetPlayer()[4].GetIsOk() == 1)
         {
             texTab[Main.Global.GetPlayer()[4].Place].enabled = false;
-            imagetab[1].sprite = picl[ Main.Global.GetPlayer()[4].Idcarte1];
-            imagetab[2].sprite = picd[ Main.Global.GetPlayer()[4].Idcarte2];
-            imagetab[3].sprite = pice[ Main.Global.GetPlayer()[4].Idcarte3];
+            imagetab[16].sprite = picl[ Main.Global.GetPlayer()[4].Idcarte1];
+            imagetab[17].sprite = picd[ Main.Global.GetPlayer()[4].Idcarte2];
+            imagetab[18].sprite = pice[ Main.Global.GetPlayer()[4].Idcarte3];
         }
         if (Main.Global.GetPlayer()[5].GetIsOk() == 1)
         {
             texTab[Main.Global.GetPlayer()[5].Place].enabled = false;
-            imagetab[1].sprite = picl[ Main.Global.GetPlayer()[5].Idcarte1];
-            imagetab[2].sprite = picd[ Main.Global.GetPlayer()[5].Idcarte2];
-            imagetab[3].sprite = pice[ Main.Global.GetPlayer()[5].Idcarte3];
+            imagetab[21].sprite = picl[ Main.Global.GetPlayer()[5].Idcarte1];
+            imagetab[22].sprite = picd[ Main.Global.GetPlayer()[5].Idcarte2];
+            imagetab[23].sprite = pice[ Main.Global.GetPlayer()[5].Idcarte3];
         }
         if (Main.Global.GetPlayer()[6].GetIsOk() == 1)
         {
             texTab[Main.Global.GetPlayer()[6].Place].enabled = false;
-            imagetab[1].sprite = picl[ Main.Global.GetPlayer()[6].Idcarte1];
-            imagetab[2].sprite = picd[ Main.Global.GetPlayer()[6].Idcarte2];
-            imagetab[3].sprite = pice[ Main.Global.GetPlayer()[6].Idcarte3];
+            imagetab[26].sprite = picl[ Main.Global.GetPlayer()[6].Idcarte1];
+            imagetab[27].sprite = picd[ Main.Global.GetPlayer()[6].Idcarte2];
+            imagetab[28].sprite = pice[ Main.Global.GetPlayer()[6].Idcarte3];
             
         }
 
