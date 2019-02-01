@@ -58,16 +58,15 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\ChangeScene.cs" />
-    <Compile Include="Assets\MainScript.cs" />
-    <Compile Include="Assets\MainScriptsc1.cs" />
-    <Compile Include="Assets\script1\rotatpaysage.cs" />
-    <Compile Include="Assets\script1\SelectNmbPlayer.cs" />
-    <Compile Include="Assets\script1\selectUser.cs" />
-    <Compile Include="Assets\script2\ChangeIdCarte.cs" />
-    <Compile Include="Assets\script2\ChangeImageEqui.cs" />
-    <Compile Include="Assets\script2\ChangeImageLoco.cs" />
-    <Compile Include="Assets\script2\ChnageImageDi.cs" />
-    <Compile Include="Assets\script2\createclassimage.cs" />
+    <Compile Include="Assets\ScriptSc1\Main.cs" />
+    <Compile Include="Assets\ScriptSc1\rotatpaysage.cs" />
+    <Compile Include="Assets\ScriptSc1\SelectNmbPlayer.cs" />
+    <Compile Include="Assets\ScriptSc1\selectUser.cs" />
+    <Compile Include="Assets\ScriptSc2\ChangeIdCarte.cs" />
+    <Compile Include="Assets\ScriptSc2\ChangeImageEqui.cs" />
+    <Compile Include="Assets\ScriptSc2\ChangeImageLoco.cs" />
+    <Compile Include="Assets\ScriptSc2\ChnageImageDi.cs" />
+    <Compile Include="Assets\ScriptSc2\MainScript.cs" />
     <Compile Include="Assets\testbdd.cs" />
     <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_SDF-Surface-Mobile.shader" />
     <None Include="Assets\TextMesh Pro\Resources\LineBreaking Leading Characters.txt" />
